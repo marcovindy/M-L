@@ -62,7 +62,7 @@ $activities = $query->fetchAll(PDO::FETCH_ASSOC);
         <?php foreach ($activities as $activity) : array_map('htmlentities', $activity); ?>
           <div class="card none--card">
             <div class="card__image">
-              <img src="img/<?= $activity['obrazek'] ?>" />
+              <img src="img/m-l-images/<?= $activity['obrazek'] ?>.jpg" />
             </div>
           </div>
 
@@ -157,7 +157,7 @@ $activities = $query->fetchAll(PDO::FETCH_ASSOC);
 
       <?php foreach ($activities as $activity) : array_map('htmlentities', $activity); ?>
         <div class="app__bg__image none--image">
-          <img src="img/<?= $activity['obrazek'] ?>" alt="" />
+          <img src="img/m-l-images/<?= $activity['obrazek'] ?>.jpg" alt="" />
         </div>
       <?php endforeach; ?>
 
