@@ -28,7 +28,7 @@ function swapCards(direction) {
 	const nextBgImageEl = appBgContainerEl.querySelector(".next--image");
 
 	let CardEl = cardsContainerEl.querySelectorAll(".card");
-
+	let BgImageEl = appBgContainerEl.querySelectorAll(".app__bg__image");
 
 	counter++;
 	if (counter > cardInfosContainerEl.querySelectorAll(".info").length-1) {
@@ -77,29 +77,32 @@ function swapCards(direction) {
 		CardEl[next].classList.remove("next--card");
 		CardEl[none].classList.remove("none--card");
 
-		// currentBgImageEl.classList.remove("current--image");
-		// previousBgImageEl.classList.remove("previous--image");
-		// nextBgImageEl.classList.remove("next--image");
+		BgImageEl[counter].classList.remove("current--image");
+		BgImageEl[previous].classList.remove("previous--image");
+		BgImageEl[next].classList.remove("next--image");
+		CardEl[none].classList.remove("none--image");
 
 		
 
 		CardEl[counter].style.zIndex = "50";
-		// currentBgImageEl.style.zIndex = "-2";
+		BgImageEl[counter].style.zIndex = "-2";
 
 		if (direction === "right") {
 			CardEl[previous].style.zIndex = "20";
 			CardEl[next].style.zIndex = "30";
 
-			// nextBgImageEl.style.zIndex = "-1";
+			BgImageEl[next].style.zIndex = "-1";
 
 			CardEl[counter].classList.add("previous--card");
 			CardEl[previous].classList.add("none--card");
 			CardEl[next].classList.add("current--card");
 			CardEl[none].classList.add("next--card");
 
-			// currentBgImageEl.classList.add("previous--image");
-			// previousBgImageEl.classList.add("next--image");
-			// nextBgImageEl.classList.add("current--image");
+			BgImageEl[counter].classList.add("previous--image");
+			BgImageEl[previous].classList.add("none--image");
+			BgImageEl[next].classList.add("current--image");
+			BgImageEl[none].classList.add("next--image");
+
 		} else if (direction === "left") {
 			// previousCardEl.style.zIndex = "30";
 			// nextCardEl.style.zIndex = "20";

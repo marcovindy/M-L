@@ -125,8 +125,8 @@ $activities = $query->fetchAll(PDO::FETCH_ASSOC);
                 <img src="img/icons/checkmark.png" alt="hotovo" class="img-done">
               </div>
             <?php endif; ?> -->
-            <h1 class="text name">></h1>
-            <h4 class="text location">xx</h4>
+            <h1 class="text name"><?= $activity['popis'] ?></h1>
+            <h4 class="text location">X</h4>
             <p class="text description"><?= $activity['popis'] ?></p>
           </div>
         <?php endforeach; ?>
@@ -148,6 +148,19 @@ $activities = $query->fetchAll(PDO::FETCH_ASSOC);
       <div class="app__bg__image next--image">
         <img src="https://source.unsplash.com/9dmycbFE7mQ" alt="" />
       </div>
+      <div class="app__bg__image none--image">
+        <img src="https://source.unsplash.com/m7K4KzL5aQ8" alt="" />
+      </div>
+      <div class="app__bg__image none--image">
+        <img src="https://source.unsplash.com/m7K4KzL5aQ8" alt="" />
+      </div>
+
+      <?php foreach ($activities as $activity) : array_map('htmlentities', $activity); ?>
+        <div class="app__bg__image none--image">
+          <img src="img/<?= $activity['obrazek'] ?>" alt="" />
+        </div>
+      <?php endforeach; ?>
+
       <div class="app__bg__image previous--image">
         <img src="https://source.unsplash.com/m7K4KzL5aQ8" alt="" />
       </div>
