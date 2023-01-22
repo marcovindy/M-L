@@ -126,7 +126,11 @@ $activities = $query->fetchAll(PDO::FETCH_ASSOC);
               </div>
             <?php endif; ?> -->
             <h1 class="text name"><?= $activity['popis'] ?></h1>
-            <h4 class="text location">X</h4>
+            <h4 class="text location">
+            <?php if ($activity['hotovo']) : ?>
+            Hotovo
+          <?php endif; ?>
+            </h4>
             <p class="text description"><?= $activity['popis'] ?></p>
           </div>
         <?php endforeach; ?>
