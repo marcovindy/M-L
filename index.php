@@ -45,19 +45,28 @@ $activities = $query->fetchAll(PDO::FETCH_ASSOC);
             <img src="https://source.unsplash.com/9dmycbFE7mQ" alt="" />
           </div>
         </div>
-        
+
         <div class="card none--card">
           <div class="card__image">
             <img src="https://source.unsplash.com/9dmycbFE7mQ" alt="" />
           </div>
         </div>
 
-        
+
         <div class="card none--card">
           <div class="card__image">
             <img src="https://image.pmgstatic.com/cache/resized/w936/files/images/film/posters/163/480/163480407_1baf9a.jpg" alt="" />
           </div>
         </div>
+
+        <?php foreach ($activities as $activity) : array_map('htmlentities', $activity); ?>
+          <div class="card none--card">
+            <div class="card__image">
+              <img src="img/<?= $activity['obrazek'] ?>" />
+            </div>
+          </div>
+
+        <?php endforeach; ?>
 
 
         <div class="card previous--card">
@@ -65,6 +74,7 @@ $activities = $query->fetchAll(PDO::FETCH_ASSOC);
             <img src="https://s.yimg.com/ny/api/res/1.2/Tz54pRpoewdR5fskHTUTMg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTU4MDtoPTMyNg--/https://media.zenfs.com/en-US/homerun/motleyfool.com/c8791337125c2b0135df1b7808619a0e" alt="" />
           </div>
         </div>
+
 
       </div>
 
@@ -79,6 +89,10 @@ $activities = $query->fetchAll(PDO::FETCH_ASSOC);
 
     <div class="infoList">
       <div class="info__wrapper">
+
+
+
+
         <div class="info current--info">
           <h1 class="text name">Highlands</h1>
           <h4 class="text location">Scotland</h4>
@@ -102,6 +116,21 @@ $activities = $query->fetchAll(PDO::FETCH_ASSOC);
           <h4 class="text location">xx</h4>
           <p class="text description">Let your dreams come true</p>
         </div>
+
+
+        <?php foreach ($activities as $activity) : array_map('htmlentities', $activity); ?>
+          <div class="info none--info">
+            <!-- <?php if ($activity['hotovo']) : ?>
+              <div class="done">
+                <img src="img/icons/checkmark.png" alt="hotovo" class="img-done">
+              </div>
+            <?php endif; ?> -->
+            <h1 class="text name">></h1>
+            <h4 class="text location">xx</h4>
+            <p class="text description"><?= $activity['popis'] ?></p>
+          </div>
+        <?php endforeach; ?>
+
 
         <div class="info previous--info">
           <h1 class="text name">yy</h1>

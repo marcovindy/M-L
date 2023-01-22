@@ -134,8 +134,9 @@
    user-select: none;
 }
 .card.none--card {
-  display: none;
-  opacity: 0;
+  --card-translateX-offset: calc(-1 * var(--card-width) * 1.1);
+  --card-rotation-offset: 25deg;
+  z-index: -100;
 }
  .card::before {
    content: "";
@@ -177,7 +178,7 @@
    --card-translateX-offset: calc(var(--card-width) * 1.1);
    --card-rotation-offset: -25deg;
 }
- .card.previous--card, .card.next--card {
+ .card.previous--card, .card.next--card, .card.none--card {
    --card-scale-offset: 0.9;
    --opacity: 0.4;
 }
